@@ -83,9 +83,9 @@ while is_on:
     if choice == "off":
         is_on = False
     elif choice == "report":
-        print(f"Water: {resources["water"]}ml")
-        print(f"Milk: {resources["milk"]}ml")
-        print(f"Coffee: {resources["coffee"]}ml")
+        print(f"Water: {resources['water']}ml")
+        print(f"Milk: {resources['milk']}ml")
+        print(f"Coffee: {resources['coffee']}ml")
         print(f"Money: ${profit}")
 
     elif choice not in MENU:
