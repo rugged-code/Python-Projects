@@ -12,6 +12,7 @@ Python-Projects/
 │
 ├── CreativeCoding/
 │   └── HirstPainting/
+│   └── TurtleRace/
 │
 └── README.md
 ```
@@ -30,6 +31,8 @@ Visual and artistic projects built using Python Turtle graphics.
 ### HirstPainting 🎨
 A generative art project inspired by Damien Hirst spot paintings using Turtle graphics.
 
+### TurtleRace 🐢
+A fun Python turtle graphics game where colorful turtles race across the screen and the user bets on the winner.
 ---
 
 ## Technologies Used
