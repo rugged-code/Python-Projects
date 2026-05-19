@@ -1,6 +1,8 @@
 from turtle import Screen
 from paddle import Paddle
 from ball import Ball
+from scoreboard import Scoreboard
+
 import time
 
 screen = Screen()
@@ -21,14 +23,13 @@ screen.onkey(l_paddle.go_up, "w")
 screen.onkey(l_paddle.go_down, "s")
 
 ball = Ball()
+scoreboard = Scoreboard()
 
 
-
-
-
+# Start the game
 is_game_on = True
 while is_game_on:
-    time.sleep(0.05)
+    time.sleep(ball.move_speed)
     screen.update()
     ball.move()
 
@@ -41,9 +42,14 @@ while is_game_on:
         ball.bounce_x()
 
     # When Right paddle missed the ball
-    if ball.xcor() > 380 or ball.xcor() < -380:
+    if ball.xcor() > 380:
         ball.reset_position()
+        scoreboard.left_point()
 
 
+    # When Left paddle missed the ball
+    if ball.xcor() < -380:
+        ball.reset_position()
+        scoreboard.right_point()
 
 screen.exitonclick()
