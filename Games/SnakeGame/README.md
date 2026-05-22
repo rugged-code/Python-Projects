@@ -10,6 +10,8 @@ Control the snake, eat food, grow longer, and avoid colliding with the walls or 
 * Smooth snake movement
 * Random food spawning
 * Score tracking system
+* Persistent high score system
+* High score saved using file handling
 * Collision detection
 * Dynamic speed increase as the score grows
 * Keyboard controls
@@ -26,6 +28,7 @@ SnakeGame/
 ├── snake.py
 ├── food.py
 ├── scoreboard.py
+├── high_score.txt
 └── README.md
 ```
 
@@ -36,6 +39,7 @@ SnakeGame/
 * Python
 * Turtle Graphics
 * Object-Oriented Programming (OOP)
+* File Handling
 
 ---
 
@@ -55,13 +59,13 @@ SnakeGame/
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-link>
+git clone https://github.com/rugged-code/Python-Projects.git
 ```
 
 ### 2. Navigate to the Project Folder
 
 ```bash
-cd SnakeGame
+cd Python-Projects/Games/SnakeGame
 ```
 
 ### 3. Run the Game
@@ -77,6 +81,7 @@ python main.py
 * Eat the food to increase your score.
 * Every food item makes the snake longer.
 * The snake speed gradually increases as the score increases.
+* The highest score is saved even after closing the game.
 * Avoid hitting the walls.
 * Avoid colliding with your own tail.
 
@@ -92,21 +97,10 @@ python main.py
 * Collision Detection
 * Keyboard Binding
 * Game State Management
+* File Handling
 
 ---
 
-## Future Improvements
-
-* High Score System
-* Restart Functionality
-* Pause Feature
-* Sound Effects
-* Start Menu
-* Difficulty Levels
-
-
-
----
 
 ## Author
 
