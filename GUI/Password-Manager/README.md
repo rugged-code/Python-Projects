@@ -1,165 +1,145 @@
-# Password Manager
+# 🔐 Password Manager
 
-[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![Tkinter](https://img.shields.io/badge/GUI-Tkinter-2C3E50?style=flat-square)](https://docs.python.org/3/library/tkinter.html)
-[![pyperclip](https://img.shields.io/badge/pyperclip-1.11+-4B8BBE?style=flat-square)](https://pypi.org/project/pyperclip/)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-0078D4?style=flat-square)]()
-
-
-A lightweight desktop app for generating strong passwords and saving login details locally. Built with **Python** and **Tkinter** as part of [100 Days of Code](https://www.udemy.com/course/100-days-of-code/) by Dr. Angela Yu.
+[Python](https://www.python.org/)
+[Tkinter](https://docs.python.org/3/library/tkinter.html)
+[pyperclip](https://pypi.org/project/pyperclip/)
+[JSON](https://www.json.org/)
+[Course](https://www.udemy.com/course/100-days-of-code/)
 
 ---
 
-## About
+A beginner-friendly desktop app to **generate strong passwords**, **save credentials locally**, and **search saved passwords** using Python + Tkinter (part of Angela Yu’s *100 Days of Code*).
 
-Password Manager gives you a small GUI to:
+> Learning project: it does not provide real security features like encryption.
 
-- Create random passwords (letters, numbers, symbols)
-- Copy them to the clipboard in one click
-- Store website, email, and password entries in a text file
+## ✨ Features
 
-It is meant for practice with GUI programming, file I/O, and user input—not as a replacement for a real password vault.
+- **🔑 Password generator**  
+Generates passwords using:
+  - 8–10 letters
+  - 2–4 numbers
+  - 2–4 symbols  
+  Then shuffles the characters to improve randomness.
+- **📋 Clipboard integration**  
+The generated password is copied automatically using `pyperclip`.
+- **💾 JSON storage (`data.json`)**  
+Credentials are stored in `data.json` and updated by website key.
+- **🧯 Exception handling**  
+  - If `data.json` doesn’t exist, it’s created automatically during save.
+  - If the JSON file is missing during search, the app shows an informative message.
+- **🔎 Search by website**  
+Enter a website and click **Search** to view the stored email/password in a popup.
+- **✅ Validation + confirmation**  
+Shows an error if any field is empty, and asks for confirmation before saving.
 
----
+## 🗄️ How credentials are stored
 
-## Features
+Your credentials are saved to `data.json` in this structure:
 
-| Feature | Description |
-|--------|-------------|
-| Password generator | 8–10 letters, 2–4 numbers, 2–4 symbols, shuffled (~12–18 chars) |
-| Clipboard integration | New password copied via `pyperclip` after each generate |
-| Credential storage | Entries appended to `data.txt` as `website \| email \| password` |
-| Input validation | Error dialog if any field is empty |
-| Save confirmation | OK/Cancel dialog shows values before writing to disk |
-| Field reset | Website and password cleared after a successful save |
+```json
+{
+  "github.com": {
+    "email": "you@example.com",
+    "password": "aB3!xK9mP2vLq"
+  }
+}
+```
 
----
-
-## Tech stack
-
-- **Python 3**
-- **Tkinter** — window, labels, entries, buttons, canvas
-- **pyperclip** — clipboard access
-- **random** — `choice`, `randint`, `shuffle` for password generation
-
----
-
-## Installation
+## 🚀 Getting started
 
 ### Prerequisites
 
-- Python 3.8+ recommended
-- Tkinter (usually bundled with Python on Windows)
+- Python 3.x (3.8+ recommended)
+- Tkinter (usually included with Python on Windows)
 - `pyperclip`
 
-### Steps
+### Setup
 
-1. **Get the project** — clone or download this folder.
-
-2. **Open a terminal** in the project directory:
-
-   ```text
-   Password-Manager/
-   ```
-
-3. **(Recommended) Virtual environment**
-
-   ```bash
+1. Open a terminal in the project folder:
+  `Password-Manager/`
+2. (Recommended) Create a virtual environment:
+  ```bash
    python -m venv .venv
-   ```
+  ```
+3. Activate it:
 
-   Activate it:
+  | OS                   | Command                        |
+  | -------------------- | ------------------------------ |
+  | Windows (PowerShell) | `.\.venv\Scripts\Activate.ps1` |
+  | Windows (CMD)        | `.venv\Scripts\activate.bat`   |
+  | macOS / Linux        | `source .venv/bin/activate`    |
 
-   | OS | Command |
-   |----|---------|
-   | Windows (PowerShell) | `.\.venv\Scripts\Activate.ps1` |
-   | Windows (CMD) | `.venv\Scripts\activate.bat` |
-   | macOS / Linux | `source .venv/bin/activate` |
-
-4. **Install dependency**
-
-   ```bash
+4. Install the dependency:
+  ```bash
    pip install pyperclip
-   ```
+  ```
 
-5. **Run the app** — must be started from the project folder so `logo.png` and `data.txt` resolve correctly:
+### Run the app
 
-   ```bash
-   python main.py
-   ```
+Run from the `Password-Manager` folder (so `logo.png` and `data.json` paths resolve correctly):
 
----
-
-## Usage
-
-1. Launch with `python main.py`.
-2. Enter a **website** (e.g. `github.com`) and **email**.
-3. Either:
-   - Click **Generate Password** — fills the password field and copies to clipboard (replaces any previous password in the field), or
-   - Type your own password manually.
-4. Click **Add**.
-5. Review the confirmation dialog; click **OK** to save or **Cancel** to abort.
-6. On save, website and password fields clear; email stays for the next entry.
-
-### Example `data.txt` line
-
-```text
-github.com | you@example.com | aB3!xK9mP2vLq
+```bash
+python main.py
 ```
 
----
+## 🧠 Usage (quick guide)
 
-## Project structure
+1. Enter:
+  - **Website**
+  - **Email**
+2. Click **Generate Password**
+  - Password appears in the password field
+  - It is copied to your clipboard automatically
+3. Click **Add**
+  - Fill-empty validation runs
+  - A confirmation dialog shows your details
+  - On successful save:
+    - **Website and Password fields clear**
+    - **Email stays** (so it’s easy to add multiple entries)
+4. Click **Search**
+  - Enter the website you want
+  - The app shows a popup with the stored **email + password**
+
+## 🖼️ Screenshots / Demo
+
+![Password Manager UI](screenshot/image.png)
+
+
+### Suggested shots
+
+- **Main UI** (website/email/password fields + buttons)
+- **Generated password** (showing clipboard flow)
+- **Search result popup**
+- `**data.json` example** (optional)
+
+## 🧩 Project structure
 
 ```text
 Password-Manager/
-├── main.py       # UI, password generator, save logic
-├── logo.png      # Logo shown in the window (required)
-├── data.txt      # Saved credentials (plain text, append-only)
-├── README.md
-└── .venv/        # Optional local virtual environment
+├── main.py       # UI + password generation + JSON save/search logic
+├── logo.png      # App logo (required)
+├── data.json     # Saved credentials (created/updated by the app)
+└── README.md
 ```
 
----
+## 🛠️ Troubleshooting
 
-## How it works (brief)
+- `**logo.png` not found**  
+Run `python main.py` from the `Password-Manager` folder (not a parent directory).
+- **Clipboard doesn’t work**  
+Reinstall `pyperclip`:
+`pip install pyperclip`
+- **No `data.json` yet**  
+That’s normal. The file is created when you successfully click **Add**.
+- **Search shows “No data file found.”**  
+Click **Add** at least once to create `data.json`.
 
-- **`gen_pass()`** — Builds character lists, shuffles them, updates the password entry, copies to clipboard.
-- **`save()`** — Reads the three fields, validates, asks for confirmation, appends one line to `data.txt`, then clears website and password fields.
-- **UI** — `Tk()` window with `grid` layout: logo canvas, three labeled entries, Generate and Add buttons.
+## ⚠️ Security notice
 
----
+This project stores credentials in **plain text JSON** on your machine. There is **no encryption**, no master password, and no secure vault logic.
 
-## Troubleshooting
+If you extend this project, consider adding encryption before using it for real accounts.
 
-| Problem | What to try |
-|--------|-------------|
-| `logo.png` not found | Run `python main.py` from the `Password-Manager` folder, not a parent directory. |
-| Clipboard does not work | Install `pyperclip`: `pip install pyperclip`. On Linux you may need `xclip` or `xsel`. |
-| Empty or missing `data.txt` | Normal on first run; the file is created/updated when you save an entry. |
-| Tkinter missing | Reinstall Python with Tcl/Tk enabled, or install `python3-tk` on Linux. |
+## 🙌 Acknowledgments
 
----
-
-## Security notice
-
-Credentials are stored in **plain text** in `data.txt` on your machine. There is no encryption, master password, or search/load UI in this version.
-
-**Do not** rely on this app for real high-value accounts. Treat `data.txt` as sensitive and avoid committing it to public Git repositories.
-
----
-
-## Possible next steps
-
-Ideas if you extend the project beyond the course baseline:
-
-- Search by website and auto-fill fields
-- JSON or encrypted storage (`cryptography` / Fernet)
-- Mask password input with `show="*"`
-- `requirements.txt` and paths relative to the script file
-
----
-
-## Acknowledgments
-
-Project structure and concepts from **Dr. Angela Yu's** [100 Days of Code: The Complete Python Pro Bootcamp](https://www.udemy.com/course/100-days-of-code/).
+Concepts and structure inspired by **Dr. Angela Yu’s** [100 Days of Code: The Complete Python Pro Bootcamp](https://www.udemy.com/course/100-days-of-code/).
