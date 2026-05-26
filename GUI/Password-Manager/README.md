@@ -1,10 +1,10 @@
 # 🔐 Password Manager
 
-[Python](https://www.python.org/)
-[Tkinter](https://docs.python.org/3/library/tkinter.html)
-[pyperclip](https://pypi.org/project/pyperclip/)
-[JSON](https://www.json.org/)
-[Course](https://www.udemy.com/course/100-days-of-code/)
+[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![Tkinter](https://img.shields.io/badge/GUI-Tkinter-2C3E50?style=flat-square)](https://docs.python.org/3/library/tkinter.html)
+[![pyperclip](https://img.shields.io/badge/pyperclip-clipboard-4B8BBE?style=flat-square)](https://pypi.org/project/pyperclip/)
+[![Storage](https://img.shields.io/badge/Storage-JSON-black?style=flat-square&logo=json&logoColor=white)](https://www.json.org/)
+[![Course](https://img.shields.io/badge/Course-100%20Days%20of%20Code-A435F0?style=flat-square)](https://www.udemy.com/course/100-days-of-code/)
 
 ---
 
@@ -110,21 +110,23 @@ python main.py
 - **Main UI** (website/email/password fields + buttons)
 - **Generated password** (showing clipboard flow)
 - **Search result popup**
-- `**data.json` example** (optional)
+- **`data.json` example** (optional)
 
 ## 🧩 Project structure
 
 ```text
 Password-Manager/
-├── main.py       # UI + password generation + JSON save/search logic
-├── logo.png      # App logo (required)
-├── data.json     # Saved credentials (created/updated by the app)
+├── main.py           # UI + password generation + JSON save/search logic
+├── logo.png          # App logo (required)
+├── screenshot/       # README screenshots (optional)
+│   └── image.png
+├── data.json         # Saved credentials (created/updated by the app)
 └── README.md
 ```
 
 ## 🛠️ Troubleshooting
 
-- `**logo.png` not found**  
+- **`logo.png` not found**  
 Run `python main.py` from the `Password-Manager` folder (not a parent directory).
 - **Clipboard doesn’t work**  
 Reinstall `pyperclip`:
