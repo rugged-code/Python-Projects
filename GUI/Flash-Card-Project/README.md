@@ -22,6 +22,7 @@ A cozy **desktop flash card app** powered by Python — learn French ↔ English
 
 [![Learning Project](https://img.shields.io/badge/Level-Beginner%20Friendly-9b59b6?style=for-the-badge)](https://github.com/)
 [![French](https://img.shields.io/badge/Learn-French%20%E2%86%94%20English-0055A4?style=for-the-badge)](https://github.com/)
+[![Status](https://img.shields.io/badge/Status-Active%20Learning-success?style=for-the-badge)](https://github.com/)
 
 <br>
 
@@ -46,28 +47,15 @@ Whether you’re following a structured course or just love **tiny, satisfying a
 
 ## 📸 Screenshots
 
-> **Add your own captures** so visitors instantly see the app in action.
 
-Place images in a `screenshots/` folder (or update the paths below).
 
 | French (front) | English (back) |
 |:---:|:---:|
 | ![App showing French word on card front](./screenshots/flashy-front.png) | ![App showing English translation on card back](./screenshots/flashy-back.png) |
 
-**Don’t have screenshots yet?** Run `python main.py`, take a window capture, and save as:
 
-- `screenshots/flashy-front.png` — French side, light card
-- `screenshots/flashy-back.png` — English side, dark card
 
-<details>
-<summary><b>💡 Quick image tips</b></summary>
 
-- Use PNG for sharp UI edges.
-- Crop close to the window for a cleaner README.
-- Optional: add a third shot of the **✅ / ❌** buttons for extra clarity.
-
-</details>
-   
 ---
 
 ## ✨ Features
@@ -93,28 +81,18 @@ Under the hood: **Tkinter** for the window, canvas, and `PhotoImage` assets; **p
 
 ---
 
-## 📂 Project structure
-
-```text
-Flash-Card-Project/
-├── main.py                 # Entry point — UI + game loop
-├── data/
-│   ├── french_words.csv    # Full French ↔ English list
-│   └── words_to_learn.csv  # Auto-updated “still learning” subset
-├── images/                 # card_front.png, card_back.png, right.png, wrong.png
-└── screenshots/            # (optional) README preview images — add yours here
-```
-
----
-
 ## 🚀 Getting started
 
 ### 1. Get the code
 
+Flashy lives inside the **[Python-Projects](https://github.com/rugged-code/Python-Projects)** collection, under the GUI folder:
+
 ```bash
-git clone <your-repo-url>
-cd Flash-Card-Project
+git clone https://github.com/rugged-code/Python-Projects.git
+cd GUI/Flash-Card-Project
 ```
+
+That path is where `main.py`, `data/`, and `images/` sit — run every command below from **`Flash-Card-Project`** (the app root).
 
 ### 2. Virtual environment (recommended)
 
@@ -186,7 +164,7 @@ You should see the **Flashy** window with a card in the center and the **wrong /
 
 This project was built while following **Dr. Angela Yu’s** [**100 Days of Code: The Complete Python Pro Bootcamp**](https://www.udemy.com/course/100-days-of-code/) on Udemy — an excellent path from Python basics to real small projects like this one.
 
-Huge thanks to **Dr. Angela Yu** for the clear teaching, project ideas, and the push to ship something you can actually run on your desktop. This repo is my own take on the **Flash Card** milestone: same spirit, same stack, polished for sharing.
+Huge thanks to **Dr. Angela Yu** for the clear teaching, project ideas, and the push to ship something you can actually run on your desktop. This project is my own take on the **Flash Card** milestone: same spirit, same stack, polished for sharing.
 
 ---
 
