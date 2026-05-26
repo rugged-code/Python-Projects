@@ -69,7 +69,7 @@ def save():
             password_entry.delete(0, END)
 
 
-# ---------------------------- UI SETUP ------------------------------- #
+# ---------------------------- SEARCH PASSWORD ------------------------------- #
 
 def find_password():
     website = website_entry.get()
